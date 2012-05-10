@@ -37,19 +37,20 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <github.global.server>github-tzrlk</github.global.server>
-        <project.scm.gitrepo>Aetheric</project.scm.gitrepo>
+        <github.global.repo>Aetheric</github.global.repo>
     </properties>
 
     <distributionManagement>
 
         <repository>
             <id>aetheric-releases</id>
-            <url>https://github.com/Tzrlk/Maven/master/releases</url>
+            <url>dav:https://github.com/Tzrlk/Maven/raw/master/releases</url>
+            <uniqueVersion>false</uniqueVersion>
         </repository>
 
         <snapshotRepository>
             <id>aetheric-snapshots</id>
-            <url>https://github.com/Tzrlk/Maven/master/snapshots</url>
+            <url>dav:https://github.com/Tzrlk/Maven/raw/master/snapshots</url>
             <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
 
@@ -79,10 +80,15 @@
         <url>http://build.aetheric.co.nz</url>
     </ciManagement>
 
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/Tzrlk/${github.global.repo}/issues</url>
+    </issueManagement>
+
     <scm>
-        <url>scm:git:git://github.com/Tzrlk/${project.scm.gitrepo}.git</url>
-        <connection>scm:git:git://github.com/Tzrlk/${project.scm.gitrepo}.git</connection>
-        <developerConnection>scm:git:git://github.com/Tzrlk/${project.scm.gitrepo}.git</developerConnection>
+        <url>scm:git:git://github.com/Tzrlk/${github.global.repo}.git</url>
+        <connection>scm:git:git://github.com/Tzrlk/${github.global.repo}.git</connection>
+        <developerConnection>scm:git:git://github.com/Tzrlk/${github.global.repo}.git</developerConnection>
     </scm>
 
     <profiles>
