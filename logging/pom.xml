@@ -6,13 +6,13 @@
 
     <parent>
         <groupId>nz.co.aetheric</groupId>
-        <artifactId>company</artifactId>
+        <artifactId>company-core</artifactId>
         <version>1.0</version>
         <relativePath>../company/pom.xml</relativePath>
     </parent>
 
     <groupId>nz.co.aetheric</groupId>
-    <artifactId>logging</artifactId>
+    <artifactId>company-logging</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 

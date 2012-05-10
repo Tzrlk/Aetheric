@@ -4,8 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nz.co.aetheric</groupId>
-    <artifactId>reactor</artifactId>
+    <parent>
+        <groupId>nz.co.aetheric</groupId>
+        <artifactId>company-core</artifactId>
+        <version>1.0</version>
+        <relativePath>/company/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>company</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
@@ -17,5 +23,11 @@
         <module>company</module>
         <module>logging</module>
     </modules>
+
+    <scm>
+        <url>https://Tzrlk@github.com/Tzrlk/Aetheric.git</url>
+        <connection>git@github.com:Tzrlk/Aetheric.git</connection>
+        <developerConnection>git@github.com:Tzrlk/Aetheric.git</developerConnection>
+    </scm>
 
 </project>

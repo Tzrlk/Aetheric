@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nz.co.aetheric</groupId>
-    <artifactId>company</artifactId>
+    <artifactId>company-core</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
-    <name>Aetheric Company</name>
+    <name>Aetheric Company POM</name>
     <description>The company-wide application root pom.</description>
     <inceptionYear>2012</inceptionYear>
 
@@ -35,15 +35,38 @@
     </developers>
 
     <distributionManagement>
+
         <repository>
-            <id>releases</id>
+            <id>aetheric-releases</id>
+            <url>https://github.com/Tzrlk/Maven/master/releases</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>aetheric-snapshots</id>
+            <url>https://github.com/Tzrlk/Maven/master/snapshots</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+
+    </distributionManagement>
+
+    <repositories>
+
+        <repository>
+            <id>aetheric-releases</id>
             <url>https://github.com/Tzrlk/Maven/raw/master/releases</url>
         </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
+
+        <repository>
+            <id>aetheric-snapshots</id>
             <url>https://github.com/Tzrlk/Maven/raw/master/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+        </repository>
+
+        <repository>
+            <id>maggandalf-maven-repository</id>
+            <url>https://github.com/maggandalf/maven-repository/raw/master</url>
+        </repository>
+
+    </repositories>
 
     <ciManagement>
         <system>Jenkins</system>
@@ -68,6 +91,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <github.global.server>github-tzrlk</github.global.server>
     </properties>
 
     <dependencyManagement>
@@ -75,7 +99,7 @@
 
             <dependency>
                 <groupId>nz.co.aetheric</groupId>
-                <artifactId>logging</artifactId>
+                <artifactId>company-logging</artifactId>
                 <version>1.0</version>
             </dependency>
 
@@ -83,6 +107,34 @@
     </dependencyManagement>
 
     <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>downloads-maven-plugin</artifactId>
+                <version>0.5</version>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.6</version>
+                <configuration>
+                    <message>Creating site for ${project.version}.</message>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
         <pluginManagement>
             <plugins>
 
