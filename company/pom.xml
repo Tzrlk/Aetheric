@@ -34,6 +34,17 @@
         
     </developers>
 
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>https://github.com/Tzrlk/Maven/raw/master/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://github.com/Tzrlk/Maven/raw/master/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <ciManagement>
         <system>Jenkins</system>
         <url>http://build.aetheric.co.nz</url>
