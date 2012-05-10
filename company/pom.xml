@@ -34,6 +34,12 @@
         
     </developers>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <github.global.server>github-tzrlk</github.global.server>
+        <project.scm.gitrepo>Aetheric</project.scm.gitrepo>
+    </properties>
+
     <distributionManagement>
 
         <repository>
@@ -73,6 +79,12 @@
         <url>http://build.aetheric.co.nz</url>
     </ciManagement>
 
+    <scm>
+        <url>scm:git:git://github.com/Tzrlk/${project.scm.gitrepo}.git</url>
+        <connection>scm:git:git://github.com/Tzrlk/${project.scm.gitrepo}.git</connection>
+        <developerConnection>scm:git:git://github.com/Tzrlk/${project.scm.gitrepo}.git</developerConnection>
+    </scm>
+
     <profiles>
 
         <profile>
@@ -89,11 +101,6 @@
 
     </profiles>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <github.global.server>github-tzrlk</github.global.server>
-    </properties>
-
     <dependencyManagement>
         <dependencies>
 
@@ -109,6 +116,11 @@
     <build>
 
         <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+            </plugin>
 
             <plugin>
                 <groupId>com.github.github</groupId>

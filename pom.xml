@@ -24,10 +24,4 @@
         <module>logging</module>
     </modules>
 
-    <scm>
-        <url>https://Tzrlk@github.com/Tzrlk/Aetheric.git</url>
-        <connection>git@github.com:Tzrlk/Aetheric.git</connection>
-        <developerConnection>git@github.com:Tzrlk/Aetheric.git</developerConnection>
-    </scm>
-
 </project>
